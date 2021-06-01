@@ -14,6 +14,7 @@
 #include "common/stats/StatsManager.h"
 #include "common/clients/meta/FileBasedClusterIdMan.h"
 #include "common/webservice/Common.h"
+#include "common/utils/mylogger.h"
 #include <folly/hash/Hash.h>
 #include <folly/ScopeGuard.h>
 #include <folly/executors/Async.h>
@@ -1004,6 +1005,8 @@ MetaClient::submitJob(cpp2::AdminJobOp op, cpp2::AdminCmd cmd, std::vector<std::
 folly::Future<StatusOr<GraphSpaceID>> MetaClient::createSpace(meta::cpp2::SpaceDesc spaceDesc,
                                                               bool ifNotExists) {
     cpp2::CreateSpaceReq req;
+
+    nebula::utils::myLogger::doLog("createSpace", -1, spaceDesc);
     req.set_properties(std::move(spaceDesc));
     req.set_if_not_exists(ifNotExists);
     folly::Promise<StatusOr<GraphSpaceID>> promise;

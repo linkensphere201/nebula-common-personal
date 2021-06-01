@@ -19,6 +19,8 @@ macro(config_nebula_common)
         file(MAKE_DIRECTORY ${common_build_dir})
     endif()
 
+    message (">> in config common, CMAKE_CXX_COMPILER: " ${CMAKE_CXX_COMPILER})
+
     execute_process(
         COMMAND
             ${CMAKE_COMMAND}
