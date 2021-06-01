@@ -11,6 +11,9 @@ _install/
 install_manifest.txt
 Base.h.gch
 
+#cpptree
+.calltree.*
+
 # ccls
 .ccls
 .ccls-cache
