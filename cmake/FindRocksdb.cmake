@@ -16,6 +16,9 @@
 find_path(Rocksdb_INCLUDE_DIR NAMES rocksdb)
 find_library(Rocksdb_LIBRARY NAMES librocksdb.a)
 
+message(STATUS "Rocksdb_INCLUDE_DIR: " ${Rocksdb_INCLUDE_DIR})
+message(STATUS "Rocksdb_LIBRARY:     " ${Rocksdb_LIBRARY})
+
 if(Rocksdb_INCLUDE_DIR AND Rocksdb_LIBRARY)
     set(Rocksdb_FOUND TRUE)
     mark_as_advanced(
@@ -28,3 +31,5 @@ if(NOT Rocksdb_FOUND)
     message(FATAL_ERROR "Rocksdb doesn't exist")
 endif()
 
+message(STATUS "Rocksdb_INCLUDE_DIR: " ${Rocksdb_INCLUDE_DIR})
+message(STATUS "Rocksdb_LIBRARY:     " ${Rocksdb_LIBRARY})
